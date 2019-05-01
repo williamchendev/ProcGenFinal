@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CameraBehaviour : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class CameraBehaviour : MonoBehaviour
     // Settings
     [Header("Camera Settings")]
     public bool debug;
+    public bool clamp_camera = false;
+    public Vector2 clamp_bounds = new Vector2(0f, 0f);
     [Header("Lerps")]
     public float lerp_spd;
     public Vector2 lerp_bounds;
@@ -44,6 +47,11 @@ public class CameraBehaviour : MonoBehaviour
         // Variables
         position = new Vector2(transform.position.x, transform.position.y);
         lerping = false;
+
+        // Move Camera at Start
+        for (int i = 0; i < 30; i++) {
+            FixedUpdate();
+        }
     }
 
     // Update Event
@@ -76,6 +84,11 @@ public class CameraBehaviour : MonoBehaviour
         mouse_input_pos.y = Mathf.Round(mouse_input_pos.y);
         mouse_input_pos.z = 5f;
         cursor.rectTransform.position = mouse_input_pos;
+
+        // ***Debug*** //
+        if (Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     // Physics Update Event
@@ -111,7 +124,12 @@ public class CameraBehaviour : MonoBehaviour
             lerpToPosition(new Vector2(position.x + camera_x_offset, position.y));
 
             // Move Camera using Camera Variables
-            transform.position = new Vector3(position.x, position.y, transform.position.z);
+            Vector2 rounding_position = position;
+            rounding_position.y = Mathf.RoundToInt(rounding_position.y * 48f) / 48f;
+            transform.position = new Vector3(rounding_position.x, rounding_position.y, transform.position.z);
+            if (clamp_camera) {
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x, clamp_bounds.x + 5f, clamp_bounds.y - 5f), transform.position.y, transform.position.z);
+            }
         }
     }
 

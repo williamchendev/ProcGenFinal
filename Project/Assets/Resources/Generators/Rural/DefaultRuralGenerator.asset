@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c981474fa60d3d84aaf1399a28c5be94, type: 3}
+  m_Name: DefaultRuralGenerator
+  m_EditorClassIdentifier: 
+  forground_tileset: {fileID: 11400000, guid: ce4601ab88bcf0242b522ca15250ed45, type: 2}
+  decorations_tileset: {fileID: 11400000, guid: 9fd30f2e0aa185f41b423c504224e26a,
+    type: 2}
+  solids:
+    serializedVersion: 2
+    m_Bits: 0

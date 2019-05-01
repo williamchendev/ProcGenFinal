@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelGenerator : MonoBehaviour
+public class DebugLevel : MonoBehaviour
 {
+
+    public LevelGen generator = null;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        generator.generateLevel();
     }
 
     // Update is called once per frame

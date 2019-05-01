@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Level File
+  m_EditorClassIdentifier: Assembly-CSharp::LevelGen
+  debug: 0
+  custom_level: 0
+  custom_level_prefab: {fileID: 0}
+  province: 1
+  region: 1
+  weather: 0
+  enemy: 2
+  npcs: 16
+  objective: 0
+  random_weather: 0
+  rain_chance: 0
+  snow_chance: 0
+  heat_chance: 0
+  random_enemy: 0
+  possible_enemies: 010000000400000002000000
+  random_npc: 0
+  possible_npcs: 8000000000020000
+  random_conflict: 0
+  conflict_chance: 0
+  random_objective: 0
+  possible_objectives: 000000000100000003000000
+  random_objective_chances: 0
+  objective_chances:
+  - 1
+  - 0
+  - 0
+  level_colors: {fileID: 11400000, guid: 8a81987ed97e1b343a846d9c77f48558, type: 2}
+  random_colors: 0
+  random_palette: []
+  level_size: 100
+  buildings: 1
+  random_settings: 0
+  min_level_size: 20
+  max_level_size: 20
+  min_buildings: 1
+  max_buildings: 1
+  generator_file:
+  - {fileID: 11400000, guid: 8061241905e02644ca8b88887d8a7f4d, type: 2}
